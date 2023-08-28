@@ -5,3 +5,5 @@ Ce repo permet de réaliser des recherches vectorielles (vector search) sur les 
 La base d'embeddings doit être générée en lançant `load.py` une première fois.
 Les requêtes se font avec `query.py`.
 
+# Screenshot
+![](screenshot.png)
