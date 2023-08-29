@@ -2,11 +2,14 @@ import tqdm
 import pandas as pd
 import chromadb
 
+from chromadb.utils import embedding_functions
 
-CHROMA_PATH = "data"
+CHROMA_PATH = "data-big"
+
+emb_fn = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="paraphrase-multilingual-mpnet-base-v2")
 
 client = chromadb.PersistentClient(path=CHROMA_PATH)
-collection = client.get_collection(name="data_gouv_datasets")
+collection = client.get_collection(name="data_gouv_datasets", embedding_function=emb_fn)
 
 q = input("Recherche : ")
 
